@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zadanie 22</title>
+</head>
+<body>
+    Odległość <input type="number" id="odl_haj"><br><br>
+    Droga <input type="number" id="dr_haj"><br><br>
+    <button onclick="javascript: oblicz()">Oblicz</button>
+    <div id="kat_haj"></div>
+    <div id="wys_haj"></div>
+
+    <script>
+        function oblicz(){
+            var x = document.getElementById('odl_haj').value;
+            var y = document.getElementById('dr_haj').value;
+
+            x = parseFloat(x);
+            y = parseFloat(y);
+
+            var wys_haj = (y * y) - (x * x);
+            wys_haj = Math.sqrt(wys_haj);
+            var z = wys_haj / x;
+            z = Math.atan(z);
+            var kat_haj = z * 180 / 3.14;
+
+            document.getElementById('kat_haj').innerText = 'Kąt wynosi ' + kat_haj;
+            document.getElementById('wys_haj').innerText = 'Wysokość wynosi ' + wys_haj;
+        }
+    </script>
+</body>
+</html>

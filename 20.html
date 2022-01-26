@@ -1,0 +1,59 @@
+<html> 
+<head> 
+<title>
+ Przykład obliczenia obowdu i pola trapezu rownoramiennego
+</title>
+ <script language="JavaScript">
+function Pow_enerlich(a,b,h,r,pole)
+{
+ r_ene=parseFloat(r)
+ a_ene=parseFloat(a)
+ b_ene=parseFloat(b)
+ h_ene=parseFloat(h)
+ r=(b_ene-a_ene)/2*(b_ene-a_ene)/2+h_ene*h_ene
+ pole=(a_ene+b_ene)*h/2
+ document.getElementsByName('pole')[0].value=pole.toFixed(2); /* na dokument */
+ alert("Pole="+pole.toFixed(2)+" cm^2"); /*do okna Alert */
+ pokaz1.innerHTML="Pole="+pole.toFixed(2)+" cm^2"+"<br>";  /* do tabeli */
+}
+function Obw_enerlich(a,b,h,r,obw)
+{
+ r_ene=parseFloat(r)
+ a_ene=parseFloat(a)
+ b_ene=parseFloat(b)
+ h_ene=parseFloat(h)
+ r_ene=(b_ene-a_ene)/2*(b_ene-a_ene)/2+h_ene*h_ene
+ obw=r_ene+r_ene+a_ene+b_ene
+ document.getElementsByName('obw')[0].value=obw.toFixed(2);
+ alert("Obwod="+obw.toFixed(2)+" cm");
+ pokaz2.innerHTML="Obwod="+obw.toFixed(2)+"cm"+"<br>";
+}
+ </script>
+</head> 
+<body> 
+Pobliczanie obw i pola trapezu rownoramiennego
+<br> <br>
+<form name="formularz" action="..." onsubmit="Pow_enerlich(this.bok_a.value,this.bok_b.value,this.wysokosc.value); 
+Obw_enerlich(this.bok_a.value,this.bok_b.value,this.wysokosc.value);return false"> 
+Podstawa 1=
+<input size="6" name="bok_a">
+Podstawa 2=
+<input size="6" name="bok_b">
+Wysokosc=
+<input size="6" name="wysokosc">
+<br>
+<br>
+<input TYPE="submit" Value="oblicz" >
+<br>
+<br>
+Pole=
+<input size="6" name="pole">
+Obwod=
+<input size="6" name="obw">
+</form>
+<table>
+<tr id="pokaz1"></tr>
+<tr id="pokaz2"></tr>
+</table>
+</body> 
+</html>
